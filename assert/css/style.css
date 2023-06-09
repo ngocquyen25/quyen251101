@@ -9,8 +9,40 @@
 .text-while{
     color: #fff !important;
 }
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.mt-8{
+    margin-top: 8px;
+}
+.mt-16{
+    margin-top: 16px;
+}
+.col{
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.col-half{
+    width: 50%;
+}
+.col-full{
+    width: 100%;
+}
+.col-third{
+    width: calc(100% / 3);
+}
+
 html{
     font-family:Arial, Helvetica, sans-serif ;
+    /* cuộn */
+    scroll-behavior: smooth;
 }
 
 #main {
@@ -38,7 +70,7 @@ html{
     
     
 }
-#nav, .subnav{
+#nav .subnav{
     list-style-type: none;
 }
 #nav li:hover{
@@ -66,6 +98,7 @@ html{
 }
 #nav li:hover .subnav{
     display: block;
+    animation: Menu ease 0.4s;
 }
 
 #nav .subnav a{
@@ -97,7 +130,7 @@ html{
     position: relative;
     margin-top: 46px;
     padding-top: 50%;
-    background-image: url('/assert/css/img/slider/chicago.jpg');
+    background-image: url('/assert/css/img/slider/pexels-sonny-sixteen-14693027.jpg'),url(/img/200x200.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -128,7 +161,7 @@ html{
     width: 800px;
     margin-left: auto;
     margin-right: auto;
-    padding: 64px 0;
+    padding: 64px 0 112px;
 }
 #content .section-heading{
     text-align:center ;
@@ -151,15 +184,11 @@ html{
     line-height: 1.4;
 }
 
-#content .member-item{
-    float: left;
-    width: calc(100% / 3);
-    text-align: center;
+.text-center{
+    text-align: center !important;
 }
 #content .member-list{
-    padding-top: 48px;
-    
-    
+    padding-top: 48px; 
 }
 
 #content .member-name{
@@ -205,15 +234,15 @@ html{
 }
 .places-list{
     margin-top: 32px;
-    margin-left: -8px;
-    margin-right: -8px;
-    padding-bottom: 48px;
+    /* margin-left: -8px; */
+    /* margin-right: -8px; */
+    /* padding-bottom: 48px; */
 }
-.place-item{
+/* .place-item{
     float: left;
     width: calc(100% / 3);
     padding: 0 8px;
-}
+} */
 .place-img{
     width: 100%;
     display: block;
@@ -239,7 +268,7 @@ html{
     margin-top: 15px;
     line-height: 1.6;
 }
-.place-buy-btn{
+.btn{
     width: 180px;
     height: 38px;
     text-decoration: none;
@@ -248,12 +277,211 @@ html{
     padding: 11px 16px;
     display: inline-block;
     margin-top:15px ;
+    cursor: pointer;
+    border:none ;
 }
-.place-buy-btn:hover{
+.pull-right{
+    float: right;
+}
+.btn:hover{
+    cursor: pointer;
     background-color: #ddd;
     color: #000;
     box-shadow: 0 0 10px rgba(112, 104, 219, 0.5);
 }
+.contact-content{
+    margin-top: 48px ;
+}
+.contact-info{
+    font-size: 18px;
+    line-height: 1.5;
+}
+.contact-info i[class*="ti-"]{
+    width: 30px;
+    display: inline-block;
+    
+}
+.contact-form{
+    font-size: 15px;
+}
+.contact-form .form-control{
+    padding: 11px;
+    border: solid 1px #ccc;
+    width: 100%;
+    outline: none;
+}
+.contact-form .form-submit{
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    float: right;
+}
+.search-input{
+    display: none;
+    float: right;
+    margin-left: 10px;
+    margin-top: 10px;
+    animation: Input ease 0.5s;
+}
+.rong{
+    width: 100px;
+    height: 30px;
+    border-radius:10px ;
+    background-color: #fff;
+    
+    
+}
+.map-section img{
+    width: 100%;
+}
 #footer {
+    padding: 64px 16px;
+    text-align: center;
+}
+#footer .socials-list{
+    font-size: 24px;
+}
+#footer .socials-list a{
+    text-decoration: none;
+    color: #757575;
+}
+#footer .copyright a:hover,
+#footer .socials-list a:hover{
+    opacity: 0.6;
+}
+#footer .copyright{
+    margin-top: 15px;
+    
+}
+#footer .copyright a{
+    color: #757575;
+}
+.model{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+.model-open{
+    display: flex;
+}
+.model-container{
+    background: #fff;
+    width: 900px;
+    max-width: calc(100% - 32px);
+    min-height: 200px;
+    position: relative;
+    animation: modelFaceIn ease 0.4s;
+}
+.model-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    padding: 12px;
+    cursor: pointer;
+    opacity: 0.8;
+    
+}
+.model-close:hover{
+    opacity:1 ;
+    background-color: #f44336;
+}
+.ti-close{
 
+
+}
+.model-header{
+    height: 120px;
+    background-color: #009688;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #fff;
+}
+.model-heading-icon{
+    margin-right: 16px;
+
+}
+.model-body{
+    padding: 16px;
+}
+.model-label{
+display: block;
+font-size: 15px;
+}
+.ti-shopping-cart{
+
+
+}
+.model-input{
+    font-size: 15px;
+    padding:10px ;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 24px;
+}
+.model-label{
+    margin-bottom: 12px;
+}
+.ti-user{
+
+
+}
+#buy-tickets{
+    background-color: #009688;
+    border: none;
+    color: #fff;
+    width: 100%;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 18px;
+}
+#buy-tickets:hover{
+    opacity: 0.5;
+}
+.model-footer{
+    padding: 16px;
+    text-align: right;
+    
+}
+.model-footer a{
+    color: #2196f3;
+}
+@keyframes modelFaceIn {
+    from{
+        opacity: 0;
+        transform: translateY(-140px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes Input {
+    from{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes Menu {
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
