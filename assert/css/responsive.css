@@ -1,0 +1,86 @@
+@media (min-width:740px) and (max-width:10223px){
+
+    .contact-info{
+        line-height: 2;
+    }
+    
+}
+
+@media (max-width:1023px){
+    .btn{
+        padding: 15px 16px;
+    }
+    .contact-form .form-control{
+        padding: 15px;
+    }
+    #footer .socials-list{
+        font-size:45px ;
+    }
+    #footer .socials-list a{
+        margin: 0 8px;
+    }
+    #footer .copyright a{
+        padding: 15px 0;
+        display: inline-block;
+    }
+    
+}
+@media(max-width:740px){
+    #nav{
+        display: block;
+    }
+    
+    #nav li {
+        display: block;
+    }
+    #nav .subnav{
+        position: initial;
+        /* trên mobile thì k cần posotion vì click menu cha nó sẽ hiện mune con (trên pc thì hover hiện theo vị trí cha ) */
+        background-color: #333;
+    }
+    #nav .subnav li a{
+        color: #fff;
+        padding: 14px 24px;
+    }
+    #header{
+        overflow: hidden;
+    }
+    .mobile-menu{
+        display: block;
+    }
+    .search-btn{
+        display: none;
+    }
+    .s-full-width{
+        width: 100% !important;
+    }
+    .s-col-full{
+        width: 100% !important;
+    }
+    .s-mt-8{
+        margin-top: 8px !important;
+    }
+    #content .member-img{
+        width: 60%;
+    }
+    .contact-form{
+        margin-top: 16px;
+    }
+    .contact-info{
+        line-height: 2;
+    }
+    
+    /* .model-container{
+        animation: modelFaceIn ease 0.4s;
+    }
+    @keyframes modelFaceIn {
+        from{
+            opacity: 0;
+            transform: translateY(-140px);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(150px);
+        }
+    } */
+}

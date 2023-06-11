@@ -3,6 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+/* .main{
+    overflow: hidden;
+} fix lỗi hiển thị responsive khi k tìm đc lỗi */
 .clear{
     clear: both;
 }
@@ -23,6 +26,9 @@
 }
 .mt-16{
     margin-top: 16px;
+}
+.mt-32{
+    margin-top: 32px;
 }
 .col{
     float: left;
@@ -58,9 +64,12 @@ html{
     right: 0;
     /* để header được nổi lên trên slider */
     z-index: 1;
+    /* ẩn menu khi ở mobile(ẩn các thẻ con bị dư ra khỏi thẻ cha) */
+    
 }
 #nav{
     display: inline-block;
+    
 }
 
 #nav li{
@@ -69,6 +78,9 @@ html{
     
     
     
+}
+#nav>li:first-child{
+    display: inline-block;
 }
 #nav .subnav{
     list-style-type: none;
@@ -113,16 +125,30 @@ html{
 .nav-arow-down{
     font-size: 12px;
 }
-
+.mobile-menu{
+    /* position: absolute;
+    top: 0;
+    right: 0; */
+    display: none;
+}
+.mobile-menu,
 .search-btn{
     float: right;
     line-height: 46px;
     padding: 0 21px;
     cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.mobile-menu:hover{
+    color: #000;
+    background-color: #ccc;
 }
 .search-btn:hover{
     background-color: #f44336;
 }
+.mobile-menu,
 .search-btn .ti-search{
     color: white;
 }
@@ -130,7 +156,7 @@ html{
     position: relative;
     margin-top: 46px;
     padding-top: 50%;
-    background-image: url('/assert/css/img/slider/pexels-sonny-sixteen-14693027.jpg'),url(/img/200x200.png);
+    background-image: url(/assert/css/img/slider/pexels-sonny-sixteen-14693027.jpg),url(/img/200x200.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -159,9 +185,10 @@ html{
 
 #content .content-section{
     width: 800px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding: 64px 0 112px;
+    padding: 64px 16px 112px 16px;
 }
 #content .section-heading{
     text-align:center ;
@@ -188,7 +215,7 @@ html{
     text-align: center !important;
 }
 #content .member-list{
-    padding-top: 48px; 
+    padding-top: 32px; 
 }
 
 #content .member-name{
@@ -233,7 +260,7 @@ html{
     margin-top: -3px;
 }
 .places-list{
-    margin-top: 32px;
+    margin-top: 16px;
     /* margin-left: -8px; */
     /* margin-right: -8px; */
     /* padding-bottom: 48px; */
@@ -269,8 +296,8 @@ html{
     line-height: 1.6;
 }
 .btn{
-    width: 180px;
-    height: 38px;
+    /* width: 180px; */
+    /* height: 45px; */
     text-decoration: none;
     color: #fff;
     background-color: #000;
@@ -279,15 +306,18 @@ html{
     margin-top:15px ;
     cursor: pointer;
     border:none ;
+    appearance: none;
+    /* chạy css trên trình duyệt của iphone */
+    -webkit-appearance: none;
 }
 .pull-right{
     float: right;
 }
 .btn:hover{
     cursor: pointer;
-    background-color: #ddd;
+    background-color: #3eadee;
     color: #000;
-    box-shadow: 0 0 10px rgba(112, 104, 219, 0.5);
+    box-shadow: 0 0 10px rgba(39, 26, 226, 0.5);
 }
 .contact-content{
     margin-top: 48px ;
@@ -300,6 +330,13 @@ html{
     width: 30px;
     display: inline-block;
     
+}
+.contact-info a{
+    color: #101aef;
+    opacity: 0.8;
+}
+.contact-info a:hover{
+    opacity: 1;
 }
 .contact-form{
     font-size: 15px;
